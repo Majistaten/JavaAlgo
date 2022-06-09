@@ -14,6 +14,9 @@ public class Timer {
         int result = searcher.search(key);
         long endTime = System.nanoTime();
         long duration = endTime - startTime;
-        System.out.println("Search for: " + result + " in " + duration + " nanoseconds.");
+        String keySeparator = " ".repeat(4 - String.valueOf(key).length());
+        String resultSeparator = " ".repeat(4 - String.valueOf(result).length());
+        String log = String.format(searcher.getClass().getName() + " - " + key + keySeparator + " found at: " + result + resultSeparator + " in " + duration + " nanoseconds.");
+        ResultLogger.INSTANCE.info(log);
     }
 }
