@@ -1,7 +1,11 @@
 package com.javaalgo.project;
 
+import com.javaalgo.project.gui.GraphView;
+import com.javaalgo.project.gui.MainWindow;
 import com.javaalgo.project.search.LinearSearch;
 import com.javaalgo.project.support.Timer;
+
+import javax.swing.*;
 
 public class MainRunner {
     public static void main(String[] args) {
@@ -14,5 +18,7 @@ public class MainRunner {
             timer.timeSearch(11);
             timer.timeSearch(-5);
         }
+        MainWindow mainWindow = new MainWindow("Algoholic");
+
     }
 }
