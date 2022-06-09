@@ -17,7 +17,7 @@ public class GraphView extends JPanel {
         this.peak = max;
         this.arr = new int[max];
     }
-    public void setArray(int[] arr){
+    public void updateArray(int[] arr){
         this.arr = arr;
         repaint();
     }
