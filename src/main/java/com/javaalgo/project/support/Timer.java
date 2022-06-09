@@ -1,17 +1,17 @@
 package com.javaalgo.project.support;
 
-import com.javaalgo.project.search.Searchable;
+import com.javaalgo.project.search.Searcher;
 
 public class Timer {
-    Searchable searchable;
+    Searcher searcher;
 
-    public Timer(Searchable searchable) {
-        this.searchable = searchable;
+    public Timer(Searcher searcher) {
+        this.searcher = searcher;
     }
 
     public void timeSearch(int key) {
         long startTime = System.nanoTime();
-        int result = searchable.search(key);
+        int result = searcher.search(key);
         long endTime = System.nanoTime();
         long duration = endTime - startTime;
         System.out.println("Search for: " + result + " in " + duration + " nanoseconds.");
