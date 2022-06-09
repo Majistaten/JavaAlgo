@@ -19,9 +19,9 @@ public class ExponentialSearch extends Searcher {
     public int search(int key) {
         int low = 0;
         int high = array.length - 1;
-        int mid = 0;
+        int mid;
         while (low <= high) {
-            mid = low + (int) (Math.pow(2, Math.floor(Math.log(high - low + 1) / Math.log(2))));
+            mid = low + (high - low) / 2;
             if (array[mid] == key) {
                 return mid;
             } else if (array[mid] < key) {
