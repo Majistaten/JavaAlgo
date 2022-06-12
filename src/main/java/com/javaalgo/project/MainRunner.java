@@ -4,6 +4,7 @@ import com.javaalgo.project.gui.MainWindow;
 import com.javaalgo.project.search.BinarySearch;
 import com.javaalgo.project.search.ExponentialSearch;
 import com.javaalgo.project.search.LinearSearch;
+import com.javaalgo.project.search.Searcher;
 import com.javaalgo.project.sort.BaseSorter;
 import com.javaalgo.project.support.Timer;
 
@@ -20,18 +21,19 @@ public class MainRunner {
         }
         array = Arrays.stream(array).sorted().toArray();
 
-        LinearSearch linear = new LinearSearch(array);
-        BinarySearch binary = new BinarySearch(array);
-        ExponentialSearch exponential = new ExponentialSearch(array);
-
+        Searcher[] searchers = new Searcher[] {
+                new LinearSearch(array, 0),
+                new BinarySearch(array, 0),
+                new ExponentialSearch(array, 0)
+        };
         for (int i = 0; i < 10000; i++) {
             int key = random.nextInt(1000);
-            Timer linearTimer = new Timer(linear);
-            linearTimer.timeSearch(key);
-            Timer binaryTimer = new Timer(binary);
-            binaryTimer.timeSearch(key);
-            Timer exponentialTimer = new Timer(exponential);
-            exponentialTimer.timeSearch(key);
+            Timer timer;
+            for (Searcher searcher : searchers) {
+                searcher.setKey(key);
+                timer = new Timer(searcher);
+                timer.timeSearch(key);
+            }
         }
         MainWindow mainWindow = new MainWindow("Algoholic");
         int[] arr = BaseSorter.generateArray(1000, 500);
