@@ -4,26 +4,33 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainWindow extends JFrame {
-    public MainWindow(String thenameofthewindowthatisgoingtoopenverysoon){
+    public GraphView graphView;
+    public MainWindow(String thenameofthewindowthatisgoingtoopenverysoon) throws InterruptedException {
         super(thenameofthewindowthatisgoingtoopenverysoon);
 
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Dimension size = new Dimension(1200,600);
         //
-        GraphView graphView = new GraphView();
-
-        add(graphView,BorderLayout.CENTER);
-        add(getInspector(),BorderLayout.EAST);
-        add(getHeader(),BorderLayout.NORTH);
-        add(getFooter(),BorderLayout.SOUTH);
-        add(getSide(),BorderLayout.WEST);
+        this.graphView = new GraphView(this);
+        add(graphView,      BorderLayout.CENTER);
+        add(getInspector(), BorderLayout.EAST);
+        add(getHeader(),    BorderLayout.NORTH);
+        add(getFooter(),    BorderLayout.SOUTH);
+        add(getSide(),      BorderLayout.WEST);
         //
         pack();
         setSize(size);
+        //graphView.setPreferredSize(new Dimension(1000,500));
         setLocationRelativeTo(null);
         setVisible(true);
+        //
+        graphView.setMax(300);
 
+    }
+    public void updateArray(int[] arr){
+        this.graphView.updateArray(arr);
+        repaint();
     }
     private JPanel getInspector(){
         JPanel inspector = new JPanel();

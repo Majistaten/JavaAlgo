@@ -7,26 +7,23 @@ import java.util.Random;
 public class GraphView extends JPanel {
     private int[] arr = new int[1000];
     private int peak = 100;
-    public GraphView() {
-        Random r = new Random();
-        for (int i = 0; i < this.arr.length; i++) {
-            this.arr[i] = r.nextInt(500);
-        }
+    private MainWindow mainFrame;
+    public GraphView(MainWindow frame) {
+        this.mainFrame = frame;
     }
     public void setMax(int max){
         this.peak = max;
-        this.arr = new int[max];
     }
     public void updateArray(int[] arr){
         this.arr = arr;
-        repaint();
+        System.out.println("Update");
     }
     @Override
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        for(int i : this.arr){
-            g2d.drawLine(i,500,i,500-this.arr[i]);
+        int height = this.getHeight();
+        for(int i=0; i<this.arr.length; i++){
+            g2d.drawLine(i,height,i,height-this.arr[i]);
         }
-
     }
 }
