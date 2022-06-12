@@ -6,17 +6,16 @@ public class ExponentialSearch extends Searcher {
      * Constructor for ExponentialSearch.
      * @param array the array to be searched.
      */
-    public ExponentialSearch(int[] array) {
-        super(array);
+    public ExponentialSearch(final int[] array, final int key) {
+        super(array, key);
     }
 
     /**
      * Search method for ExponentialSearch.
-     * @param key the key to find.
      * @return the index of the key if found, -1 otherwise.
      */
     @Override
-    public int search(int key) {
+    public int execute() {
         int low = 0;
         int high = array.length - 1;
         int mid;

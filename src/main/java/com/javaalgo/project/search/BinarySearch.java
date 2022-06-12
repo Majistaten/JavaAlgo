@@ -6,17 +6,16 @@ public class BinarySearch extends Searcher {
      * Constructor for BinarySearch.
      * @param array the array to be searched.
      */
-    public BinarySearch(int[] array) {
-        super(array);
+    public BinarySearch(final int[] array, final int key) {
+        super(array, key);
     }
 
     /**
      * Search method for BinarySearch.
-     * @param key the key to find.
      * @return the index of the key if found, -1 otherwise.
      */
     @Override
-    public int search(int key) {
+    public int execute() {
         int low = 0;
         int high = array.length - 1;
         while (low <= high) {

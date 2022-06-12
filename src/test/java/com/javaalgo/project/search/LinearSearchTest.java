@@ -25,13 +25,13 @@ class LinearSearchTest {
 
     @Test
     void searchExisting() {
-        assertEquals(4, linearSearch.search(5));
-        assertEquals(9, linearSearch.search(10));
+        assertEquals(4, linearSearch.execute(5));
+        assertEquals(9, linearSearch.execute(10));
     }
 
     @Test
     void searchNonExisting() {
-        assertEquals(-1, linearSearch.search(11));
-        assertEquals(-1, linearSearch.search(-5));
+        assertEquals(-1, linearSearch.execute(11));
+        assertEquals(-1, linearSearch.execute(-5));
     }
 }

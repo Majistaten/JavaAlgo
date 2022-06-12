@@ -1,15 +1,21 @@
 package com.javaalgo.project.search;
 
-public abstract class Searcher {
+import com.javaalgo.project.support.Timable;
+
+public abstract class Searcher implements Timable {
     int[] array;
+    int key;
 
-    public Searcher(int[] array) {
+    public Searcher(final int[] array, final int key) {
         this.array = array;
+        this.key = key;
     }
-
-    public abstract int search(int key);
 
     public void setArray(int[] array) {
         this.array = array;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
     }
 }
