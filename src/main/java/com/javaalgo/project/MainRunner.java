@@ -1,5 +1,6 @@
 package com.javaalgo.project;
 
+import com.javaalgo.project.gui.MainWindow;
 import com.javaalgo.project.search.BinarySearch;
 import com.javaalgo.project.search.ExponentialSearch;
 import com.javaalgo.project.search.LinearSearch;
@@ -25,5 +26,11 @@ public class MainRunner {
             Timer exponentialTimer = new Timer(exponential);
             exponentialTimer.timeSearch(950);
         }
+        MainWindow mainWindow = new MainWindow("Algoholic");
+        int[] arr = new int[1000];
+        for(int i=0; i<1000; i++){
+            arr[i] = i/3;
+        }
+        mainWindow.updateArray(arr);
     }
 }

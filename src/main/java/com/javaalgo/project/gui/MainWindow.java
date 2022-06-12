@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class MainWindow extends JFrame {
     public GraphView graphView;
-    public MainWindow(String thenameofthewindowthatisgoingtoopenverysoon) throws InterruptedException {
+    public MainWindow(String thenameofthewindowthatisgoingtoopenverysoon) {
         super(thenameofthewindowthatisgoingtoopenverysoon);
 
         setLayout(new BorderLayout());
