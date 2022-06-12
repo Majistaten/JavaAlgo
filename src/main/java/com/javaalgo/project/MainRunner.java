@@ -4,6 +4,7 @@ import com.javaalgo.project.gui.MainWindow;
 import com.javaalgo.project.search.BinarySearch;
 import com.javaalgo.project.search.ExponentialSearch;
 import com.javaalgo.project.search.LinearSearch;
+import com.javaalgo.project.sort.BaseSorter;
 import com.javaalgo.project.support.Timer;
 
 import java.util.Arrays;
@@ -33,10 +34,7 @@ public class MainRunner {
             exponentialTimer.timeSearch(key);
         }
         MainWindow mainWindow = new MainWindow("Algoholic");
-        int[] arr = new int[1000];
-        for(int i=0; i<1000; i++){
-            arr[i] = i/3;
-        }
+        int[] arr = BaseSorter.generateArray(1000, 500);
         mainWindow.updateArray(arr);
     }
 }
