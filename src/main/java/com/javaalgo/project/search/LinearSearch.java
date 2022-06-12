@@ -19,6 +19,7 @@ public class LinearSearch extends Searcher {
      * @param key the key to find.
      * @return the index of the key if found, -1 otherwise.
      */
+    @Override
     public int search(final int key) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == key) {
