@@ -14,9 +14,12 @@ public class Timer {
         int result = searcher.search(key);
         long endTime = System.nanoTime();
         long duration = endTime - startTime;
-        String keySeparator = " ".repeat(4 - String.valueOf(key).length());
-        String resultSeparator = " ".repeat(4 - String.valueOf(result).length());
-        String log = String.format(searcher.getClass().getName() + " - " + key + keySeparator + " found at: " + result + resultSeparator + " in " + duration + " nanoseconds.");
+
+        // TODO: Remove logging from timer and return the result instead.
+        if (result != -1) {
+        String log = String.format("%-20s key:%-5s found at:%-5s in %s nanoseconds.",
+                searcher.getClass().getSimpleName(), key, result, duration);
         ResultLogger.INSTANCE.info(log);
+        }
     }
 }
