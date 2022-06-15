@@ -1,6 +1,6 @@
 package com.javaalgo.project.search;
 
-public class ExponentialSearch extends Searcher {
+public class ExponentialSearch extends BaseSearcher {
 
     /**
      * Constructor for ExponentialSearch.
@@ -15,20 +15,20 @@ public class ExponentialSearch extends Searcher {
      * @return the index of the key if found, -1 otherwise.
      */
     @Override
-    public int execute() {
+    public int[] execute() {
         int low = 0;
         int high = array.length - 1;
         int mid;
         while (low <= high) {
             mid = low + (high - low) / 2;
             if (array[mid] == key) {
-                return mid;
+                return new int[] {key, mid};
             } else if (array[mid] < key) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
             }
         }
-        return -1;
+        return new int[] {key, -1};
     }
 }

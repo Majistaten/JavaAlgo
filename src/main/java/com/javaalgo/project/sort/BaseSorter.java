@@ -1,10 +1,11 @@
 package com.javaalgo.project.sort;
 
 import com.javaalgo.project.gui.MainWindow;
+import com.javaalgo.project.support.Timeable;
 
 import java.util.Random;
 
-public abstract class BaseSorter {
+public abstract class BaseSorter implements Timeable {
     private int[] _values;
     protected MainWindow gui;
     // Default constructor
@@ -12,11 +13,14 @@ public abstract class BaseSorter {
 
     }
     // Custom constructor
-    private BaseSorter(int[] values){
+    protected BaseSorter(int[] values){
         this.setArray(values);
     }
     public void setArray(int[] values){
         this._values = values;
+    }
+    public int[] getArray(){
+        return this._values;
     }
     //
     protected int getIndex(int index){

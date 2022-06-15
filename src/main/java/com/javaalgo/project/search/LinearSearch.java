@@ -1,10 +1,13 @@
 package com.javaalgo.project.search;
 
+import java.sql.Array;
+import java.util.Arrays;
+
 /**
  * Linear search algorithm used as base case for efficiency estimation.
  * @author Tobias Hansson
  */
-public class LinearSearch extends Searcher {
+public class LinearSearch extends BaseSearcher {
 
     /**
      * Constructor for LinearSearch.
@@ -19,14 +22,13 @@ public class LinearSearch extends Searcher {
      * @return the index of the key if found, -1 otherwise.
      */
     @Override
-    public int execute() {
+    public int[] execute() {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == key) {
-                return i;
+                return new int[] {key, i};
             }
         }
-        return -1;
+        return new int[] {key, -1};
     }
-
 
 }
