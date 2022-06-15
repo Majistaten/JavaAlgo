@@ -16,17 +16,27 @@ public class ExponentialSearch extends BaseSearcher {
      */
     @Override
     public int[] execute() {
-        int low = 0;
-        int high = array.length - 1;
-        int mid;
-        while (low <= high) {
-            mid = low + (high - low) / 2;
+        int bottom = 0;
+        int top = 2;
+        int max = array.length - 1;
+        if (array[bottom] == key) {
+            return new int[] {key, bottom};
+        }
+        while (top < max && array[top] <= key) {
+            bottom = top;
+            top = (int) Math.pow(top, 2);
+            if (top > max) {
+                top = max;
+            }
+        }
+        while (bottom < top) {
+            int mid = bottom + (top - bottom) / 2;
             if (array[mid] == key) {
                 return new int[] {key, mid};
             } else if (array[mid] < key) {
-                low = mid + 1;
+                bottom = mid + 1;
             } else {
-                high = mid - 1;
+                top = mid - 1;
             }
         }
         return new int[] {key, -1};
