@@ -19,16 +19,16 @@ class LinearSearchTest {
     }
     @Test
     void searchExisting() {
-        assertEquals(new int[] {5, 4}, linearSearch.execute());
+        assertArrayEquals(new int[] {5, 4}, linearSearch.execute());
         changeKey(10);
-        assertEquals(new int[] {10, 9}, linearSearch.execute());
+        assertArrayEquals(new int[] {10, 9}, linearSearch.execute());
     }
 
     @Test
     void searchNonExisting() {
         changeKey(11);
-        assertEquals(new int[] {11, -1}, linearSearch.execute());
+        assertArrayEquals(new int[] {11, -1}, linearSearch.execute());
         changeKey(-5);
-        assertEquals(new int[] {-5, -1}, linearSearch.execute());
+        assertArrayEquals(new int[] {-5, -1}, linearSearch.execute());
     }
 }

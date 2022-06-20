@@ -17,8 +17,8 @@ class ExponentialSearchTest {
 
     @Test
     void execute() {
-        assertEquals(new int[] {5, 4}, exponentialSearch.execute());
+        assertArrayEquals(new int[] {5, 4}, exponentialSearch.execute());
         exponentialSearch.setKey(10);
-        assertEquals(new int[] {10, 9}, exponentialSearch.execute());
+        assertArrayEquals(new int[] {10, 9}, exponentialSearch.execute());
     }
 }

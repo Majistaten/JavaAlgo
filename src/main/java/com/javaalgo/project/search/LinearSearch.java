@@ -1,7 +1,5 @@
 package com.javaalgo.project.search;
 
-import java.sql.Array;
-import java.util.Arrays;
 
 /**
  * Linear search algorithm used as base case for efficiency estimation.
