@@ -13,11 +13,16 @@ import java.util.Random;
 
 public class MainRunner {
     public static void main(String[] args) {
+        int arrayLength = 10000;
+        int keyTop = 100000;
+        int loopCount = 10000;
+
         Random random = new Random();
-        int[] array = new int[1000];
+        int[] array = new int[arrayLength];
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(1000);
+            array[i] = random.nextInt(keyTop);
+            array[i] = i;
         }
 
         array = Arrays.stream(array).sorted().toArray();
@@ -27,8 +32,8 @@ public class MainRunner {
                 new BinarySearch(array, 0),
                 new ExponentialSearch(array, 0)
         };
-        for (int i = 0; i < 10000; i++) {
-            int key = random.nextInt(1000);
+        for (int i = 0; i < loopCount; i++) {
+            int key = random.nextInt(keyTop);
             Timer timer;
             for (BaseSearcher baseSearcher : baseSearchers) {
                 baseSearcher.setKey(key);
@@ -36,8 +41,8 @@ public class MainRunner {
                 timer.timeSearch(key);
             }
         }
-        MainWindow mainWindow = new MainWindow("Algoholic");
-        int[] arr = BaseSorter.generateArray(1000, 500);
-        mainWindow.updateArray(arr);
+//        MainWindow mainWindow = new MainWindow("Algoholic");
+//        int[] arr = BaseSorter.generateArray(1000, 500);
+//        mainWindow.updateArray(arr);
     }
 }
