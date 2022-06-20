@@ -16,15 +16,16 @@ public class BinarySearch extends BaseSearcher {
      */
     @Override
     public int[] execute() {
-        int low = 0;
-        int high = array.length - 1;
+        int low = 0;   // Set low array index
+        int high = array.length - 1;   // Set high array index
+
         while (low <= high) {
-            int mid = (low + high) / 2;
+            int mid = (low + high) / 2;   // Set the target to middle index.
             if (array[mid] == key) {
-                return new int[] {key, mid};
-            } else if (array[mid] < key) {
+                return new int[] {key, mid};   // Key found, return key and index.
+            } else if (array[mid] < key) {   // Key is smaller than target, search within lower indexes.
                 low = mid + 1;
-            } else {
+            } else {   // Key is bigger than target, search within higher indexes.
                 high = mid - 1;
             }
         }
