@@ -1,11 +1,11 @@
 package com.javaalgo.project.sort;
 
 import com.javaalgo.project.gui.MainWindow;
-import com.javaalgo.project.support.Timeable;
+import com.javaalgo.project.support.Timable;
 
 import java.util.Random;
 
-public abstract class BaseSorter implements Timeable {
+public abstract class BaseSorter implements Timable {
     private int[] _values;
     protected MainWindow gui;
     // Default constructor

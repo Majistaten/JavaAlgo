@@ -2,14 +2,22 @@ package com.javaalgo.project.support;
 
 import static java.time.format.DateTimeFormatter.ofPattern;
 
+/**
+ * Timer class that wraps a Timable object and provides a simple interface for timing the execution of the algorithm.
+ */
 public class Timer {
-    Timeable searcher;
+    Timable searcher;
 
-    public Timer(Timeable searcher) {
+    /**
+     * Constructor for Timer.
+     *
+     * @param searcher the algorithm object to be timed.
+     */
+    public Timer(Timable searcher) {
         this.searcher = searcher;
     }
 
-    public void timeSearch(int key) {
+    public void timeSearch() {
         long startTime = System.nanoTime();
         int[] result = searcher.execute();
         long endTime = System.nanoTime();
