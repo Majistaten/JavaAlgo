@@ -17,6 +17,9 @@ public class Timer {
         this.searcher = searcher;
     }
 
+    /**
+     * Time the execution of the algorithm and log the result
+     */
     public void timeSearch() {
         long startTime = System.nanoTime();
         int[] result = searcher.execute();
