@@ -12,10 +12,9 @@ public class LinearSearch extends BaseSearcher {
      * Constructor for LinearSearch.
      *
      * @param array the array to be searched.
-     * @param key   the key to be searched for.
      */
-    public LinearSearch(final int[] array, final int key) {
-        super(array, key);
+    public LinearSearch(final int[] array) {
+        super(array);
     }
 
     /**

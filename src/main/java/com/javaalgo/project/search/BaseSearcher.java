@@ -15,11 +15,10 @@ public abstract class BaseSearcher implements Timable {
      * Constructor for BaseSearcher.
      *
      * @param array the array to be searched.
-     * @param key   the key to be searched for.
      */
-    protected BaseSearcher(final int[] array, final int key) {
+    protected BaseSearcher(final int[] array) {
         this.array = array;
-        this.key = key;
+        this.key = 0;
     }
 
     /**

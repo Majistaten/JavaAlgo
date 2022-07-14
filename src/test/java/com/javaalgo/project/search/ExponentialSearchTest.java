@@ -12,11 +12,12 @@ class ExponentialSearchTest {
 
     @BeforeEach
     void setUp() {
-        exponentialSearch = new ExponentialSearch(array, 5);
+        exponentialSearch = new ExponentialSearch(array);
     }
 
     @Test
     void execute() {
+        exponentialSearch.setKey(5);
         assertArrayEquals(new int[] {5, 4}, exponentialSearch.execute());
         exponentialSearch.setKey(10);
         assertArrayEquals(new int[] {10, 9}, exponentialSearch.execute());

@@ -11,10 +11,9 @@ public class ExponentialSearch extends BaseSearcher {
      * Constructor for ExponentialSearch.
      *
      * @param array sorted array to be searched.
-     * @param key   the key to be searched for.
      */
-    public ExponentialSearch(final int[] array, final int key) {
-        super(array, key);
+    public ExponentialSearch(final int[] array) {
+        super(array);
     }
 
     /**

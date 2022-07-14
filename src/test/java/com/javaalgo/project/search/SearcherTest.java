@@ -19,9 +19,9 @@ public class SearcherTest {
         for (int i = 1; i < arrayTop; i++) {
             array[i - 1] = i;
         }
-        searchers.add(new LinearSearch(array, 0));
-        searchers.add(new BinarySearch(array, 0));
-        searchers.add(new ExponentialSearch(array, 0));
+        searchers.add(new LinearSearch(array));
+        searchers.add(new BinarySearch(array));
+        searchers.add(new ExponentialSearch(array));
     }
 
     private void changeKey(int key) {

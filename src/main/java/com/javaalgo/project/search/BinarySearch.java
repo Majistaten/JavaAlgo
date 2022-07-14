@@ -11,10 +11,9 @@ public class BinarySearch extends BaseSearcher {
      * Constructor for BinarySearch.
      *
      * @param array sorted array to be searched.
-     * @param key   the key to be searched for.
      */
-    public BinarySearch(final int[] array, final int key) {
-        super(array, key);
+    public BinarySearch(final int[] array) {
+        super(array);
     }
 
     /**
